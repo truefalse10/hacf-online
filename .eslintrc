@@ -1,7 +1,17 @@
 {
   "root": true,
   "extends": [
-    "plugin:vue/essential",
+    "plugin:vue/recommended",
+    "@vue/airbnb",
     "@vue/prettier"
-  ]
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "trailingComma": "all",
+      "bracketSpacing": true,
+      "jsxBracketSameLine": true
+    }]
+  }
 }
