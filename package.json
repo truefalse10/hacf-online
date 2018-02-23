@@ -1,5 +1,6 @@
 {
-  "name": "webpack",
+  "name": "wedding",
+  "description": "a wedding page built on vuejs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
