@@ -19,6 +19,9 @@ export default {
   components: {
     Gallery,
   },
+  mounted() {
+    this.$store.dispatch('fetchImages');
+  },
 };
 </script>
 
