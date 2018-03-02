@@ -15,16 +15,19 @@
     <gallery :images="images"/>
     <form @submit.prevent="upload">
       <div>
-        <label for="profile_pic">Choose file to upload</label>
+        <label for="profile_pic">Bild zum Hochladen auswählen</label>
         <input 
           type="file"
           id="profile_pic"
           name="profile_pic"
-          @change="uploadedFile = $event.target.files[0]"
+          ref="input"
+          @change="change"
           accept=".jpg, .jpeg, .png">
       </div>
       <div>
-        <button>Submit</button>
+        <button
+          type="submit" 
+          v-if="showUpload">Hochladen!</button>
       </div>
     </form>
   </div>
@@ -42,6 +45,7 @@ export default {
   data() {
     return {
       uploadedFile: null,
+      showUpload: false,
     };
   },
   computed: mapState(['images']),
@@ -52,6 +56,14 @@ export default {
     upload() {
       if (this.uploadedFile)
         this.$store.dispatch('uploadImage', this.uploadedFile);
+    },
+    change(event) {
+      if (event.target.files.length) {
+        this.showUpload = true;
+        this.uploadedFile = event.target.files[0];
+      } else {
+        this.showUpload = false;
+      }
     },
   },
 };
