@@ -26,12 +26,10 @@ export default new Vuex.Store({
   },
   actions: {
     fetchImages({ commit }) {
-      console.log(s3); // eslint-disable-line
       s3.listObjects((err, data) => {
         if (err) {
           console.log(err); // eslint-disable-line
         } else {
-          console.log(data); // eslint-disable-line
           commit(
             'fetchImagesSuccess',
             // data.Contents,
@@ -40,6 +38,21 @@ export default new Vuex.Store({
                 `https://hacfonline.s3.eu-central-1.amazonaws.com/${Key}`,
             ),
           );
+        }
+      });
+    },
+    uploadImage({ commit }, file) {
+      console.log(commit, file); //eslint-disable-line
+      const params = {
+        Body: file,
+        Key: file.name,
+        Bucket: 'hacfonline',
+      };
+      s3.putObject(params, (err, data) => {
+        if (err) {
+          console.log(err); // eslint-disable-line
+        } else {
+          console.log('success', data); // eslint-disable-line
         }
       });
     },

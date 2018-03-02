@@ -13,7 +13,20 @@
       style="width: 100%;"
     > -->
     <gallery :images="images"/>
-    <button>Upload Image</button>
+    <form @submit.prevent="upload">
+      <div>
+        <label for="profile_pic">Choose file to upload</label>
+        <input 
+          type="file"
+          id="profile_pic"
+          name="profile_pic"
+          @change="uploadedFile = $event.target.files[0]"
+          accept=".jpg, .jpeg, .png">
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -26,9 +39,20 @@ export default {
   components: {
     Gallery,
   },
+  data() {
+    return {
+      uploadedFile: null,
+    };
+  },
   computed: mapState(['images']),
   mounted() {
     this.$store.dispatch('fetchImages');
+  },
+  methods: {
+    upload() {
+      if (this.uploadedFile)
+        this.$store.dispatch('uploadImage', this.uploadedFile);
+    },
   },
 };
 </script>
