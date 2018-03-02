@@ -6,7 +6,7 @@
     >
       <!-- slides -->
       <swiper-slide 
-        v-for="slide in slides"
+        v-for="slide in images"
         :key="slide">
         <img 
           class="slide" 
@@ -32,13 +32,19 @@ export default {
     swiper,
     swiperSlide,
   },
+  props: {
+    images: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       swiperOption: {
-        effect: 'fade',
+        // effect: 'fade',
         loop: true,
         autoplay: {
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         },
         // navigation: {
@@ -46,7 +52,6 @@ export default {
         //   prevEl: '.swiper-button-prev',
         // },
       },
-      slides: ['/img/background.jpg', '/img/vwbus.jpg'],
     };
   },
   computed: {

@@ -1,15 +1,18 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import AWS from 'aws-sdk';
-import config from '../config';
+import config from '../config.json';
+
+AWS.config.update({
+  accessKeyId: config.key,
+  secretAccessKey: config.secret,
+  region: 'eu-central-1',
+});
 
 const s3 = new AWS.S3({
   params: {
     Bucket: 'hacfonline',
   },
-  accessKeyId: config.key,
-  secretAccessKey: config.secret,
-  region: 'eu-central-1',
 });
 
 Vue.use(Vuex);
@@ -19,7 +22,7 @@ export default new Vuex.Store({
     images: null,
   },
   mutations: {
-    fetchImagesSuccess: (state, images) => (state = images),
+    fetchImagesSuccess: (state, images) => (state.images = images),
   },
   actions: {
     fetchImages({ commit }) {
@@ -31,7 +34,11 @@ export default new Vuex.Store({
           console.log(data); // eslint-disable-line
           commit(
             'fetchImagesSuccess',
-            data.Contents.map(({ Key }) => encodeURIComponent(Key)),
+            // data.Contents,
+            data.Contents.map(
+              ({ Key }) =>
+                `https://hacfonline.s3.eu-central-1.amazonaws.com/${Key}`,
+            ),
           );
         }
       });

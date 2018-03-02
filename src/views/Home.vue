@@ -6,12 +6,19 @@
       Cora + Felix 🎉
     </h1>
     <p class="date">04.08.2018 <a href="#">@Wackersberg</a></p>
-    <gallery/>
-    <button>Button</button>
+    <!-- <img
+      v-for="image in images"
+      :key="image"
+      :src="image"
+      style="width: 100%;"
+    > -->
+    <gallery :images="images"/>
+    <button>Upload Image</button>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Gallery from '@/components/Gallery';
 
 export default {
@@ -19,6 +26,7 @@ export default {
   components: {
     Gallery,
   },
+  computed: mapState(['images']),
   mounted() {
     this.$store.dispatch('fetchImages');
   },
