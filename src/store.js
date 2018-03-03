@@ -20,9 +20,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     images: null,
+    uploadState: false,
   },
   mutations: {
     fetchImagesSuccess: (state, images) => (state.images = images),
+    // uploadStates: pending | success | failed | initial
+    setUploadState: (state, uploadState) => (state.uploadState = uploadState),
   },
   actions: {
     fetchImages({ commit }) {
@@ -42,17 +45,19 @@ export default new Vuex.Store({
       });
     },
     uploadImage({ commit }, file) {
+      commit('setUploadState', 'pending');
       console.log(commit, file); //eslint-disable-line
       const params = {
         Body: file,
         Key: file.name,
         Bucket: 'hacfonline',
       };
-      s3.putObject(params, (err, data) => {
+      s3.putObject(params, err => {
         if (err) {
           console.log(err); // eslint-disable-line
+          commit('setUploadState', 'failed');
         } else {
-          console.log('success', data); // eslint-disable-line
+          commit('setUploadState', 'success');
         }
       });
     },
