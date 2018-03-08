@@ -1,11 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import AWS from 'aws-sdk';
-import config from '../config.json';
 
 AWS.config.update({
-  accessKeyId: config.key,
-  secretAccessKey: config.secret,
+  accessKeyId: process.env.VUE_APP_AWS_KEY,
+  secretAccessKey: process.env.VUE_APP_AWS_SECRET,
   region: 'eu-central-1',
 });
 
