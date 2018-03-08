@@ -5,13 +5,7 @@
       <br>
       Cora + Felix 🎉
     </h1>
-    <p class="date">04.08.2018 <a href="#">@Wackersberg</a></p>
-    <!-- <img
-      v-for="image in images"
-      :key="image"
-      :src="image"
-      style="width: 100%;"
-    > -->
+    <p class="date">04.08.2018 <a href="#wackersberg">@Wackersberg</a></p>
     <gallery :images="images"/>
     <form @submit.prevent="upload">
       <div>
@@ -79,16 +73,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-.date {
-  margin-top: 0;
-}
-.button-upload {
-  &.success {
-    background-color: #37ab36;
+.home {
+  height: 100vh;
+  padding-top: 80px;
+  background-image: url('../assets/dancing.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  h1 {
+    text-transform: uppercase;
+  }
+  .date {
+    margin-top: 0;
+  }
+  .button-upload {
+    &.success {
+      background-color: #37ab36;
+    }
   }
 }
 </style>

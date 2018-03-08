@@ -65,13 +65,18 @@ export default {
 <style lang="scss">
 .swiper-container {
   width: 100%;
+  background: #fff;
   @media screen and (min-width: 475px) {
     width: 60%;
+    max-height: 60vh;
   }
 }
 .slide {
-  padding: 15px;
+  box-sizing: border-box;
   width: 100%;
-  background: white;
+  padding: 5px;
+  @media screen and (min-width: 475px) {
+    padding: 15px;
+  }
 }
 </style>
