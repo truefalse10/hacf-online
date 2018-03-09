@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import 'swiper/dist/css/swiper.css';
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
@@ -31,12 +32,6 @@ export default {
   components: {
     swiper,
     swiperSlide,
-  },
-  props: {
-    images: {
-      type: Array,
-      default: () => [],
-    },
   },
   data() {
     return {
@@ -58,6 +53,7 @@ export default {
     swiper() {
       return this.$refs.mySwiper.swiper;
     },
+    ...mapState(['images', 'uploadState']),
   },
 };
 </script>
@@ -65,7 +61,6 @@ export default {
 <style lang="scss">
 .swiper-container {
   width: 100%;
-  background: #fff;
   @media screen and (min-width: 475px) {
     width: 60%;
     max-height: 60vh;
@@ -74,9 +69,5 @@ export default {
 .slide {
   box-sizing: border-box;
   width: 100%;
-  padding: 5px;
-  @media screen and (min-width: 475px) {
-    padding: 15px;
-  }
 }
 </style>

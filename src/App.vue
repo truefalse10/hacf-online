@@ -11,6 +11,12 @@
           <h2>About</h2>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
         </v-section>
+        <v-section 
+          key="gallery" 
+          class="grey"
+          id="gallery">
+          <gallery-section/>
+        </v-section>
         <v-section
           key="wackersberg" 
           :class="{ 'out-of-view': !visible.wackersberg }"
@@ -60,12 +66,14 @@
 import VHeader from '@/components/Header';
 import VSection from '@/components/Section';
 import Home from '@/components/Home';
+import GallerySection from '@/components/GallerySection';
 
 export default {
   components: {
     VHeader,
     Home,
     VSection,
+    GallerySection,
   },
 };
 </script>
@@ -132,6 +140,7 @@ a {
 button {
   color: white;
   background: $color-2;
+  transition: all 300ms ease;
 }
 section {
   background: #fff;

@@ -57,6 +57,7 @@ export default new Vuex.Store({
           commit('setUploadState', 'failed');
         } else {
           commit('setUploadState', 'success');
+          return Promise.resolve();
         }
       });
     },
