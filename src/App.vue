@@ -2,15 +2,18 @@
   <div id="app">
     <v-header />
     <home/>
-    <section id="about">
+    <section 
+      key="about" 
+      id="about">
       <h2>About</h2>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
     </section>
-    <section id="wackersberg">
+    <section
+    id="wackersberg">
       <div class="image-text">
         <div>
           <img 
-            src="img/wackersberg.jpg"
+            src="img/haus.jpg"
             alt="wackersberg">
         </div>
         <div>
@@ -19,7 +22,8 @@
         </div>
       </div>
     </section>
-    <section id="anreise">
+    <section
+    id="anreise">
       <div class="image-text">
         <div>
           <h2>Anreise</h2>
@@ -27,10 +31,19 @@
         </div>
         <div>
           <img 
-            src="img/wackersberg.jpg"
+            src="img/wiese.jpg"
             alt="wackersberg">
         </div>
       </div>
+    </section>
+    <section>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d180386.28604841878!2d11.445167564753861!3d47.759151740700354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479d942d4640586b%3A0xfa5a04962e533cbc!2sBurger+19%2C+83646+Wackersberg!5e0!3m2!1sde!2sde!4v1520618567060"
+        width="100%" 
+        height="300" 
+        frameborder="0" 
+        style="border:0"
+        allowfullscreen/>
     </section>
   </div>
 </template>
@@ -113,9 +126,15 @@ button {
 section {
   background: #fff;
   color: black;
-  padding: 25px;
+  padding: 25px 0;
   max-width: 1200px;
   margin: 0 auto 60px;
+  @media screen and (min-width: $breakpoint) {
+    padding: 25px;
+  }
+  &.grey {
+    background-color: #f0f0f0;
+  }
 }
 .image-text {
   img {
