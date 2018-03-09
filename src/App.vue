@@ -2,40 +2,49 @@
   <div id="app">
     <v-header />
     <home/>
-    <section 
-      key="about" 
-      id="about">
-      <h2>About</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
-    </section>
-    <section
-    id="wackersberg">
-      <div class="image-text">
-        <div>
-          <img 
-            src="img/haus.jpg"
-            alt="wackersberg">
-        </div>
-        <div>
-          <h2>Wackersberg</h2>
+    <scroll-view :offset="100">
+      <template slot-scope="visible">
+        <v-section 
+          key="about" 
+          :class="{ 'out-of-view': !visible.about }"
+          id="about">
+          <h2>About</h2>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
-        </div>
-      </div>
-    </section>
-    <section
-    id="anreise">
-      <div class="image-text">
-        <div>
-          <h2>Anreise</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
-        </div>
-        <div>
-          <img 
-            src="img/wiese.jpg"
-            alt="wackersberg">
-        </div>
-      </div>
-    </section>
+        </v-section>
+        <v-section
+          key="wackersberg" 
+          :class="{ 'out-of-view': !visible.wackersberg }"
+          id="wackersberg">
+          <div class="image-text">
+            <div>
+              <img 
+                src="img/haus.jpg"
+                alt="wackersberg">
+            </div>
+            <div>
+              <h2>Wackersberg</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
+            </div>
+          </div>
+        </v-section>
+        <v-section
+          key="anreise"
+          :class="{ 'out-of-view': !visible.anreise}"
+          id="anreise">
+          <div class="image-text">
+            <div>
+              <h2>Anreise</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
+            </div>
+            <div>
+              <img 
+                src="img/wiese.jpg"
+                alt="wackersberg">
+            </div>
+          </div>
+        </v-section>
+      </template>
+    </scroll-view>
     <section>
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d180386.28604841878!2d11.445167564753861!3d47.759151740700354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479d942d4640586b%3A0xfa5a04962e533cbc!2sBurger+19%2C+83646+Wackersberg!5e0!3m2!1sde!2sde!4v1520618567060"
@@ -47,15 +56,16 @@
     </section>
   </div>
 </template>
-
 <script>
 import VHeader from '@/components/Header';
+import VSection from '@/components/Section';
 import Home from '@/components/Home';
 
 export default {
   components: {
     VHeader,
     Home,
+    VSection,
   },
 };
 </script>
@@ -128,12 +138,26 @@ section {
   color: black;
   padding: 25px 0;
   max-width: 1200px;
-  margin: 0 auto 60px;
+  margin: 0 auto 100px;
+  transition: all 0.5s ease;
   @media screen and (min-width: $breakpoint) {
     padding: 25px;
   }
   &.grey {
     background-color: #f0f0f0;
+  }
+  &.out-of-view {
+    opacity: 0;
+  }
+  &:nth-child(1n) {
+    &.out-of-view {
+      transform: translateX(-80px);
+    }
+  }
+  &:nth-child(2n) {
+    &.out-of-view {
+      transform: translateX(80px);
+    }
   }
 }
 .image-text {
