@@ -8,8 +8,12 @@
           key="about" 
           :class="{ 'out-of-view': !visible.about }"
           id="about">
-          <h2>About</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
+          <h2>Hochzeit</h2>
+          <p>Servus beinand,
+          wir wollen unsere Hochzeit mit euch feiern!
+          </p>
+          <p>Wo: Burgernstr.24 (bei google maps Burgern 19)</p>
+          <p>Wann: 15 Uhr freie Trauung</p>
         </v-section>
         <v-section 
           key="gallery" 
@@ -29,7 +33,11 @@
             </div>
             <div>
               <h2>Wackersberg</h2>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
+              <p>
+                Wackersberg, wer es noch nicht kennt, ist für uns unser zweites Zuhause. Seit mehr als 100 Jahren fahren alle Mitglieder der Endres Familie regelmäßig
+                in dieses Ferienhaus am Rande von Bad Tölz. Die Trauung der beiden Paare soll in dem mehr als 30 Tagwerk großen naturbelassenen Garten stattfinden,
+                die Feier auf dem Feld des Nachbar Bauerns...
+              </p>
             </div>
           </div>
         </v-section>
@@ -40,6 +48,11 @@
           <div class="image-text">
             <div>
               <h2>Anreise</h2>
+              <ul>
+                <li>Auto: aus München kommend über die A95 Richtung Garmisch. Ausfahrt Wolfratshausen über Königsdorf nach Bad Tölz</li>
+                <li>Zug: mit der BOB von München Hbf nach Bad Tölz. Von dort aus am besten mit dem Taxi oder zu Fuß (30min)</li>
+                <li>Schlauchboot: von München nach Bad Tölz bitte an Julia Endres wenden</li>
+              </ul>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis pariatur voluptas explicabo nisi fugiat voluptates dignissimos maxime facere in voluptatibus! Harum ducimus dolorem nisi molestias beatae eveniet optio incidunt ipsam!</p>
             </div>
             <div>
@@ -48,8 +61,34 @@
                 alt="wackersberg">
             </div>
           </div>
-        </v-section>
-      </template>
+</v-section></template></v-section></scroll-view></div></template></v-section></div></v-section>
+  <v-section
+    key="anreise"
+    :class="{ 'out-of-view': !visible.anreise}"
+    id="anreise">
+    <div class="image-text">
+      <div style="text-align: left">
+        <h2>Parken & Übernachten</h2>
+        <h3>Parken:</h3>
+        <p>
+          ein öffentlicher Parkplatz befindet sich nur wenige Gehmitnuten von der Feier entfernt (Bild von Parkplatz)
+        </p>
+        <h3>Übernachten</h3>
+        <ul>
+          <li>Jugenherberge Bad Tölz, am Sportpark 4</li>
+          <li>Zeltmöglichkeit nähe Burgernstr.24</li>
+          <li>diverse Hotels in Umgebung Wackersberg/Bad Tölz</li>
+          <li>bei weiteren Fragen gerne an Birgit wenden (b.mau-endres@t-online.de)</li>
+        </ul>
+      </div>
+      <div>
+        <img 
+          src="img/wiese.jpg"
+          alt="wackersberg">
+      </div>
+    </div>
+  </v-section>
+</template>
     </scroll-view>
     <section>
       <iframe 
@@ -146,7 +185,6 @@ section {
   background: #fff;
   color: black;
   padding: 25px 0;
-  max-width: 1200px;
   margin: 0 auto 100px;
   transition: all 0.5s ease;
   @media screen and (min-width: $breakpoint) {
@@ -155,19 +193,19 @@ section {
   &.grey {
     background-color: #f0f0f0;
   }
-  &.out-of-view {
-    opacity: 0;
-  }
-  &:nth-child(1n) {
-    &.out-of-view {
-      transform: translateX(-80px);
-    }
-  }
-  &:nth-child(2n) {
-    &.out-of-view {
-      transform: translateX(80px);
-    }
-  }
+  // &.out-of-view {
+  //   opacity: 0;
+  // }
+  // &:nth-child(1n) {
+  //   &.out-of-view {
+  //     transform: translateX(-80px);
+  //   }
+  // }
+  // &:nth-child(2n) {
+  //   &.out-of-view {
+  //     transform: translateX(80px);
+  //   }
+  // }
 }
 .image-text {
   img {

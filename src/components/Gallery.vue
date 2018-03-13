@@ -61,13 +61,18 @@ export default {
 <style lang="scss">
 .swiper-container {
   width: 100%;
+  height: 100vh;
   @media screen and (min-width: 475px) {
-    width: 60%;
-    max-height: 60vh;
+    min-width: 60%;
+    height: 500px;
   }
 }
 .slide {
   box-sizing: border-box;
   width: 100%;
+  @media screen and (min-width: 475px) {
+    width: auto;
+    height: 100%;
+  }
 }
 </style>
