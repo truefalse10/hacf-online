@@ -42,6 +42,24 @@
           </div>
         </v-section>
         <v-section
+          key="wackersberg" 
+          :class="{ 'out-of-view': !visible.wackersberg }"
+          id="wackersberg">
+          <div class="image-text">
+            <div>
+              <img 
+                src="img/haus.jpg"
+                alt="wackersberg">
+            </div>
+            <div>
+              <h2>Tombola</h2>
+              <p>Um an unserer großartigen Tombola mit wahnsinns Preisen teilnehmen zu können, ist es unbedingt notwendig die Antwortkarte ausgefüllt und zeitnah zurückzuschicken. Unter allen Einsendern verlosen wir den Hauptgewinn.</p>
+              <p>Für weitere Frangen/Beiträge/Geschenke bitte an die Trauzeugen wenden (wackersberg.hochzeit@gmail.com)</p>
+              <p>Andi wünscht sich Kies, Scheine, Schotter, Money, Moos!</p>
+            </div>
+          </div>
+        </v-section>
+        <v-section
           key="anreise"
           :class="{ 'out-of-view': !visible.anreise}"
           id="anreise">
