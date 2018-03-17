@@ -100,7 +100,6 @@
 <script>
 // TODO: schrift tauschen
 // TODO: impressum
-// TODO: google analytics
 
 import VHeader from '@/components/Header';
 import VSection from '@/components/Section';
