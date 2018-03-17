@@ -99,9 +99,10 @@
   </div>
 </template>
 <script>
-// TODO: responsive
+// TODO: links navbar
 // TODO: schrift tauschen
 // TODO: impressum
+// TODO: google analytics
 
 import VHeader from '@/components/Header';
 import VSection from '@/components/Section';
@@ -127,7 +128,7 @@ $color-3: #4b3120;
 $color-4: #26281b;
 $color-5: #6c5138;
 $header-color: #272727;
-$breakpoint: 415px;
+$breakpoint: 768px;
 * {
   box-sizing: border-box;
 }
@@ -189,7 +190,7 @@ button {
 section {
   background: #fff;
   color: black;
-  padding: 25px 0 100px;
+  padding: 25px 25px 40px;
   margin: 0 auto;
   transition: all 0.5s ease;
   @media screen and (min-width: $breakpoint) {
@@ -203,15 +204,15 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
-  > div {
-    width: 50%;
-  }
   img {
     width: 100%;
     max-width: 350px;
   }
   @media screen and (min-width: $breakpoint) {
     display: flex;
+    > div {
+      width: 50%;
+    }
   }
 }
 ul {
