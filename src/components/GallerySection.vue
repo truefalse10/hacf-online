@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="gallery-section">
     <h2>Gallery</h2>
     <p>Dies ist eine Sammlung von Bildern, die die beiden Paare in ihren glücklichen, lustigen, traurigen, stolzen aber vielleicht auch etwas peinlichen Momenten zeigt. Jeder Besucher ist dazu aufgefordert Schnappschüsse, die sich vielleicht noch auf einer alten Kamera, Smartphone oder in einem Poesiealbum finden lassen hier hochzuladen. Einfach Datei auswählen und den Upload Button klicken!</p>
     <form @submit.prevent="upload">
@@ -64,6 +64,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.gallery-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .upload {
   margin-bottom: 30px;
 }

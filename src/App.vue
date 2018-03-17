@@ -2,7 +2,7 @@
   <div id="app">
     <v-header />
     <home/>
-    <v-section 
+    <!-- <v-section 
     id="about">
       <h2>Hochzeit</h2>
       <p>Servus beinand,
@@ -10,16 +10,11 @@
       </p>
       <p>Wo: Burgernstr.24 (bei google maps Burgern 19)</p>
       <p>Wann: 15 Uhr freie Trauung</p>
-    </v-section>
-    <v-section 
-      class="grey"
-      id="gallery">
-      <gallery-section/>
-    </v-section>
+    </v-section> -->
     <v-section
     id="wackersberg">
       <div class="image-text">
-        <div>
+        <div class="image">
           <img 
             src="img/haus.jpg"
             alt="wackersberg">
@@ -34,37 +29,43 @@
         </div>
       </div>
     </v-section>
+    <v-section 
+      class="grey"
+      id="gallery">
+      <gallery-section/>
+    </v-section>
     <v-section
     id="tombola">
       <div class="image-text">
         <div>
-          <img 
-            src="img/haus.jpg"
-            alt="wackersberg">
-        </div>
-        <div>
           <h2>Tombola</h2>
           <p>Um an unserer großartigen Tombola mit wahnsinns Preisen teilnehmen zu können, ist es unbedingt notwendig die Antwortkarte ausgefüllt und zeitnah zurückzuschicken. Unter allen Einsendern verlosen wir den Hauptgewinn.</p>
-          <p>Für weitere Frangen/Beiträge/Geschenke bitte an die Trauzeugen wenden (wackersberg.hochzeit@gmail.com)</p>
-          <p>Andi wünscht sich Kies, Scheine, Schotter, Money, Moos!</p>
+          <p>Für weitere Frangen/Beiträge/Geschenke bitte an die Trauzeugen wenden <a href="mailto:wackersberg.hochzeit@gmail.com">wackersberg.hochzeit@gmail.com</a></p>
+          <p>Andi: <em>"am besten Kies, Scheine, Schotter, Money und Moos!"</em></p>
+        </div>
+        <div class="image">
+          <img 
+            src="img/tombola.jpg"
+            alt="tombola">
         </div>
       </div>
     </v-section>
     <v-section
     id="anreise">
       <div class="image-text">
+        <div class="image">
+          <img 
+            src="img/anreise.jpg"
+            alt="wackersberg">
+        </div>
         <div>
           <h2>Anreise</h2>
+          Die Adresse ist Burgernstraße 24, 83646 Wackersberg. Auf Google Maps wird die Markierung leider nicht richtig angezeigt, dort lieber Burger 19 eingeben.
           <ul class="anreise">
             <li><strong>Auto:</strong> aus München kommend über die A95 Richtung Garmisch. Ausfahrt Wolfratshausen über Königsdorf nach Bad Tölz</li>
             <li><strong>Zug:</strong> mit der BOB von München Hbf nach Bad Tölz. Von dort aus am besten mit dem Taxi oder zu Fuß (30min)</li>
-            <li><strong>Schlauchboot:</strong> von München nach Bad Tölz bitte an Julia Endres wenden</li>
+            <li><strong>Schlauchboot:</strong> von München nach Bad Tölz, für Tips bitte an Julia Endres wenden</li>
           </ul>
-        </div>
-        <div>
-          <img 
-            src="img/wiese.jpg"
-            alt="wackersberg">
         </div>
       </div>
     </v-section>
@@ -77,7 +78,7 @@
           <div style="text-align: left">
             <h3>Parken</h3>
             <p>
-              ein öffentlicher Parkplatz befindet sich nur wenige Gehmitnuten von der Feier entfernt (Bild von Parkplatz)
+              ein öffentlicher Parkplatz befindet sich nur wenige Gehmitnuten von der Feier entfernt (siehe Bild)
             </p>
             <h3>Übernachten</h3>
             <ul>
@@ -88,9 +89,9 @@
             </ul>
           </div>
         </div>
-        <div>
+        <div class="image">
           <img 
-            src="img/wiese.jpg"
+            src="img/parkplatz.jpg"
             alt="wackersberg">
         </div>
       </div>
@@ -148,15 +149,19 @@ body {
   color: $color-font;
 }
 
+h1 {
+  font-size: 26px;
+  margin: 0;
+}
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Dosis', sans-serif;
-  margin: 0;
 }
 h2 {
   color: $color-2;
+  text-transform: uppercase;
 }
 
 #nav {
@@ -189,25 +194,29 @@ button {
 section {
   background: #fff;
   color: black;
-  padding: 25px 0;
-  margin: 0 auto 100px;
+  padding: 25px 0 100px;
+  margin: 0 auto;
   transition: all 0.5s ease;
   @media screen and (min-width: $breakpoint) {
-    padding: 25px;
+    padding: 25px 25px 100px;
   }
   &.grey {
     background-color: #f0f0f0;
   }
 }
 .image-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  > div {
+    width: 50%;
+  }
   img {
     width: 100%;
+    max-width: 350px;
   }
   @media screen and (min-width: $breakpoint) {
     display: flex;
-    > div:first-child {
-      margin-right: 20px;
-    }
   }
 }
 ul {
