@@ -2,15 +2,6 @@
   <div id="app">
     <v-header />
     <home/>
-    <!-- <v-section 
-    id="about">
-      <h2>Hochzeit</h2>
-      <p>Servus beinand,
-      wir wollen unsere Hochzeit mit euch feiern!
-      </p>
-      <p>Wo: Burgernstr.24 (bei google maps Burgern 19)</p>
-      <p>Wann: 15 Uhr freie Trauung</p>
-    </v-section> -->
     <v-section
     id="wackersberg">
       <div class="image-text">
@@ -108,6 +99,10 @@
   </div>
 </template>
 <script>
+// TODO: responsive
+// TODO: schrift tauschen
+// TODO: impressum
+
 import VHeader from '@/components/Header';
 import VSection from '@/components/Section';
 import Home from '@/components/Home';
