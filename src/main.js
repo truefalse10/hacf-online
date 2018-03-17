@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import ScrollView from 'vue-scrollview';
+import VueScrollTo from 'vue-scrollto';
 
 import App from './App.vue';
 import store from './store';
-import './registerServiceWorker';
+// import './registerServiceWorker';
 
-Vue.use(ScrollView);
+Vue.use(VueScrollTo);
 Vue.config.productionTip = false;
 
 new Vue({

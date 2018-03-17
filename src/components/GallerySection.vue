@@ -1,6 +1,6 @@
 <template>
   <div class="gallery-section">
-    <h2>Gallery</h2>
+    <h2>Fotos</h2>
     <p>Dies ist eine Sammlung von Bildern, die die beiden Paare in ihren glücklichen, lustigen, traurigen, stolzen aber vielleicht auch etwas peinlichen Momenten zeigt. Jeder Besucher ist dazu aufgefordert Schnappschüsse, die sich vielleicht noch auf einer alten Kamera, Smartphone oder in einem Poesiealbum finden lassen hier hochzuladen. Einfach Datei auswählen und den Upload Button klicken!</p>
     <form @submit.prevent="upload">
       <div class="upload">

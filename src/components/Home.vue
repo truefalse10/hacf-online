@@ -30,6 +30,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../variables.scss';
+
 .home {
   height: 100vh;
   padding-top: 100px;
@@ -40,17 +42,26 @@ export default {
   background-repeat: no-repeat;
   h1 {
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 35px;
     margin-bottom: 20px;
   }
   .text {
-    font-size: 24px;
+    font-size: 20px;
     color: black;
     background: rgba(255, 255, 255, 0.8);
     width: 70%;
     margin: 0 auto;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
+  }
+  @media screen and (min-width: $breakpoint) {
+    h1 {
+      font-size: 50px;
+    }
+    .text {
+      font-size: 24px;
+      padding: 20px;
+    }
   }
 }
 </style>

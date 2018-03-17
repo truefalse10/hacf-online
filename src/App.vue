@@ -61,8 +61,7 @@
       </div>
     </v-section>
     <v-section
-      key="parken"
-      id="anreise">
+    id="parken">
       <div class="image-text">
         <div>
           <h2>Parken & Übernachten</h2>
@@ -99,7 +98,6 @@
   </div>
 </template>
 <script>
-// TODO: links navbar
 // TODO: schrift tauschen
 // TODO: impressum
 // TODO: google analytics
@@ -121,14 +119,8 @@ export default {
 
 
 <style lang="scss">
-$color-font: #fff;
-$color-primary: #b5b99a;
-$color-2: #c4526f;
-$color-3: #4b3120;
-$color-4: #26281b;
-$color-5: #6c5138;
-$header-color: #272727;
-$breakpoint: 768px;
+@import './variables.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -160,25 +152,6 @@ h2 {
   text-transform: uppercase;
 }
 
-#nav {
-  padding: 10px 30px;
-  display: flex;
-  justify-content: space-between;
-  background-color: $header-color;
-  color: #fff;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-#nav a {
-  font-weight: bold;
-  color: $color-2;
-}
-
-#nav a.router-link-exact-active {
-  color: $color-2;
-}
 a {
   color: $color-2;
 }
